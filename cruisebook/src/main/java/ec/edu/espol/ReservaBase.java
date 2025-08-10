@@ -15,10 +15,9 @@ public class ReservaBase implements Reserva {
     private Cabina cabina; 
 
     
-    public ReservaBase(int id, ViajeCrucero vcrucero, EstadoReserva estado, Usuario usuario, Date fechaReserva, PoliticaCancelacion politicaCancelacion, String tipoCabina) {
+    public ReservaBase(int id, ViajeCrucero vcrucero, Usuario usuario, Date fechaReserva, PoliticaCancelacion politicaCancelacion, String tipoCabina) {
         this.id=id; 
         this.viajeCrucero = vcrucero;
-        this.estado = estado;
         this.usuario = usuario;
         this.fechaReserva = fechaReserva;
         this.politicaCancelacion = politicaCancelacion;
@@ -34,6 +33,7 @@ public class ReservaBase implements Reserva {
             this.cabina=cabinasDisponibles.get(0);
         }
         usuario.getReservas().add(this);
+        this.estado= EstadoReserva.RESERVADA;
     }
 
     public int getId() {

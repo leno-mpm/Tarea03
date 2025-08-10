@@ -4,6 +4,10 @@ public class PoliticaCancelacion {
     private int id;
     private String descripcion;
 
+    public PoliticaCancelacion(String descripcion, int id) {
+        this.descripcion = descripcion;
+        this.id = id;
+    }
     public boolean verificarCancelacion(Reserva reserva) {
         if (reserva.getEstado() == EstadoReserva.CONFIRMADA) {
             return true;
