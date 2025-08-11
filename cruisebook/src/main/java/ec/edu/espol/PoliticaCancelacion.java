@@ -9,7 +9,7 @@ public class PoliticaCancelacion {
         this.id = id;
     }
     public boolean verificarCancelacion(Reserva reserva) {
-        if (reserva.getEstado() == EstadoReserva.CONFIRMADA) {
+        if (reserva.getEstado() == EstadoReserva.RESERVADA) {
             return true;
         }
         return false;
